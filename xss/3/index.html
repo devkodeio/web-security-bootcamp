@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The XSS Game - Level 3</title>
+  </head>
+  <body>
+    <form action="./" method="GET">
+      <input type="text" name="search" />
+      <input type="submit" value="Search" />
+    </form>
+    <span id="output"></span>
+    <script src="./script.js"></script>
+  </body>
+</html>
