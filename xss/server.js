@@ -16,25 +16,9 @@ server.use(function (req, res, next) {
   const cookie = req.cookies?.secret;
   if (cookie === undefined) {
     res.cookie("secret", "devkode");
-    // res.cookie("secret", "devkode", { maxAge: 900000, httpOnly: true, secure: true });
   }
   next();
 });
-
-// server.use(
-//   helmet.contentSecurityPolicy({
-//     useDefaults: true,
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       scriptSrc: ["'self'", "devkode.io"],
-//       imgSrc: ["data:", "devkode.io"],
-//       objectSrc: ["'none'"],
-//       upgradeInsecureRequests: [],
-//       reportUri: "/api/report-violations",
-//     },
-//     reportOnly: true,
-//   })
-// );
 
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir, { recursive: true });

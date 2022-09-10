@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The XSS Game - Level 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background: #fbf5e2;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="./" method="GET">
+      <input type="text" name="search" />
+      <input type="submit" value="Search" />
+    </form>
+    <span id="output"></span>
+
+    <img src="https://devkode.io/img/devkode-logo.svg" />
+    <br />
+    <iframe src="https://devkode.io" height="300px" width="800px"></iframe>
+    <br />
+    <script src="./script.js"></script>
+    <script>
+      console.log("Hello World!!");
+    </script>
+    <script>
+      console.log("Welcome to session");
+    </script>
+  </body>
+</html>
