@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The XSS Game - Level 10</title>
+  </head>
+  <body>
+    <h2>Iframe XSS Example</h2>
+    <div id="output"></div>
+    <hr />
+    <iframe src="./child.html" frameborder="0"></iframe>
+    <script>
+      window.addEventListener(
+        "message",
+        function (event) {
+          console.log(event.origin);
+          console.log("Received response:  " + JSON.stringify(event.data));
+          document.getElementById("output").innerHTML = "Hello " + event.data.name;
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
