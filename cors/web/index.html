@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORS Web Demo</title>
+  </head>
+  <body>
+    <button onclick="getChatAPI()">GET - CHAT API</button>
+    <button onclick="postChatAPI()">POST - CHAT API</button>
+    <button onclick="getSwiggyAPI()">GET - SWIGGY API</button>
+    <button onclick="getLinkedInTitle()">GET - LINKEDIN TITLE</button>
+
+    <br /><br />
+    <form action="http://localhost:9999/api/comment" method="post" style="display: none">
+      <input type="textarea" name="comment" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      function getChatAPI() {
+        fetch("http://localhost:9999/api/comment", {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((res) => console.log("GET - CHAT API", res));
+      }
+
+      function postChatAPI() {
+        fetch("http://localhost:9999/api/comment", {
+          method: "POST",
+          body: JSON.stringify({
+            comment: "hello from Web via Burpsuite...",
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }).then((res) => console.log("POST - CHAT API", res.statusText));
+      }
+
+      function getSwiggyAPI() {
+        fetch(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4723392&lng=80.3447932&page_type=DESKTOP_WEB_LISTING"
+        )
+          .then((res) => res.json())
+          .then((res) => console.log("GET - Swiggy API", res));
+      }
+
+      function getLinkedInTitle() {
+        fetch("https://www.linkedin.com", {
+          method: "GET",
+          headers: {
+            "Content-Type": "text/html; charset=UTF-8",
+            "Accept-Language": "en",
+          },
+        })
+          .then((res) => res.text())
+          .then((res) => {
+            const getTitle = res.match(/<title>(.*?)<\/title>/g);
+            console.log(getTitle);
+          });
+      }
+    </script>
+  </body>
+</html>
