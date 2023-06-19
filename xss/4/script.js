@@ -20,7 +20,7 @@ async function loadData() {
   const fragment = document.createDocumentFragment();
   list.data.map((data) => {
     const div = document.createElement("div");
-    div.style.margin = "10px";
+    div.classList.add("card");
     // div.innerHTML = data.comment;
     div.append(document.createRange().createContextualFragment(data.comment));
     fragment.append(div);

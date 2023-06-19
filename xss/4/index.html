@@ -5,12 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The XSS Game - Level 4</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <textarea id="comment" rows="4" cols="50"></textarea><br />
-    <input type="button" value="Comment" onclick="addComment()" />
-    <br /><br />
-    <div id="output" style="margin-left: 20px"></div>
+  <body class="container">
+    <div class="box">
+      <img
+        src="https://devkode.io/img/devkode-logo.svg"
+        alt="The XSS Game | Devkode"
+      />
+      <h3>The XSS Game - Level 4</h3>
+      <textarea
+        id="comment"
+        rows="4"
+        cols="50"
+        placeholder="Leave a comment..."
+      ></textarea
+      ><br />
+      <input type="button" value="Comment" onclick="addComment()" />
+      <br /><br />
+      <div id="output"></div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
