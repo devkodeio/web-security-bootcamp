@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The XSS Game - Level 5</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <button onclick="chooseTab('1')">Image 1</button>
-    <button onclick="chooseTab('2')">Image 2</button>
-    <button onclick="chooseTab('3')">Image 3</button>
-    <hr />
+  <body class="container">
+    <img
+      src="https://devkode.io/img/devkode-logo.svg"
+      alt="The XSS Game | Devkode"
+    />
+    <h3>The XSS Game - Level 5</h3>
+    <div>
+      <button onclick="chooseTab('1')">Image 1</button>
+      <button onclick="chooseTab('2')">Image 2</button>
+      <button onclick="chooseTab('3')">Image 3</button>
+    </div>
     <span id="output"></span>
     <script src="./script.js"></script>
   </body>

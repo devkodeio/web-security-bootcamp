@@ -2,7 +2,8 @@ const searchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(searchParams);
 
 function search(value) {
-  const html = "<img src='./img/1.png?search=" + value + "'>";
+  if(!value) return;
+  const html = "<img src='./img/1.gif?search=" + value + "'>";
   document.querySelector("#output").innerHTML = html;
 }
 

@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Security - XSS - 8</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="./script.js"></script>
   </head>
-  <body>
+  <body class="container">
+    <img src="https://devkode.io/img/devkode-logo.svg" alt="The XSS Game | Devkode" />
+    <h3>The XSS Game - Level 8</h3>
     <input type="file" id="attachment" style="display: none" onchange="showPreview(event)" />
     <label for="attachment" class="button">Select file</label>
-    <span id="output"></span>
+    <div id="output"></div>
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -10,6 +10,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+input,
+button {
+  margin: 10px 0;
+}
+
 h3,
 h4 {
   margin-bottom: 50px;
@@ -39,7 +44,7 @@ img {
   flex-direction: column;
 }
 
-label {
+button {
   display: inline-block;
   padding: 10px 30px;
   font-size: 14px;
@@ -50,11 +55,10 @@ label {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  margin-bottom: 30px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-label:hover {
+button:hover {
   background-color: #0056b3;
 }
 
@@ -64,7 +68,7 @@ label:hover {
   margin: 10px 0;
 }
 
-#preview img {
+#output img {
   width: 100%;
   max-width: 400px;
   padding: 10px;
